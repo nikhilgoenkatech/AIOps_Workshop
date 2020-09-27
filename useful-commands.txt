@@ -20,8 +20,13 @@ Please find below some useful commands that can be used during the workshop:
 
 Other useful commands:
 1. To view the downloaded images on localhost: docker images
-2. To remove a particular image: docker rm <IMAGE-NAME>
+2. To remove a particular image: docker rmi <IMAGE-NAME>
 3. To stop a docker: docker stop <CONTAINER-ID>
 4. To remove a docker: docker rm <CONTAINER-ID>
-5. To run load test using JMETER, 
+5. To run a docker in interactive bash: docker run -it <CONTAINER> /bin/bash
+6. To delete all the unused images: docker system prune -a -f
+7. To pull a particular image: docker pull <docker-image>
+8. To run load test using JMETER, 
    Run: jmeter -n -t [jmx file] -l [results file] -e -o [Path to web report folder]
+9. Jenkins pipeline:
+   Command: https://github.com/nikhilgoenkatech/JenkinsBankApp
