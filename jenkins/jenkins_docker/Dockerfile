@@ -1,7 +1,7 @@
-FROM jenkins/jenkins:lts 
+FROM jenkins/jenkins:lts
 
 MAINTAINER Nikhil Goenka "dynatraceone@dynatrace.com"
-USER root 
+USER root
 # Update aptitude with new repo
 RUN apt-get update && \
     apt-get -y install apt-transport-https \
@@ -15,9 +15,7 @@ RUN apt-get update && \
    $(lsb_release -cs) \
    stable" && \
    apt-get update && \
-   apt-get -y install python-pip && \
-   pip install requests && \
-   apt-get -y install docker-ce
-
-# give jenkins docker rights
-RUN usermod -aG docker jenkins
+   apt-get -y install docker-ce && \
+   apt-get -y install python3-pip && \
+   pip3 install requests && \
+   pip3 install docker
